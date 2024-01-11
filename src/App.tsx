@@ -1,26 +1,21 @@
+import styled from '@emotion/styled';
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Header from './components/organisms/Header';
+import IntroSection from './components/organisms/IntroSection';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <PageLayout>
+      <Header />
+      {/* <IntroSection /> */}
+    </PageLayout>
   );
 }
 
 export default App;
+
+const PageLayout = styled.div`
+  max-width: 100vw;
+  min-height: 100vh;
+  background: #faf0e6;
+`;
