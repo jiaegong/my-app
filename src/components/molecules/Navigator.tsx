@@ -3,13 +3,13 @@ import MenuItem from '../atoms/MenuItem';
 
 const menuItems = [
   {
+    name: 'About',
+  },
+  {
     name: 'Portfolio',
   },
   {
     name: 'Contact',
-  },
-  {
-    name: 'About',
   },
 ];
 
@@ -27,5 +27,5 @@ export default Navigator;
 
 const Layout = styled.div`
   display: flex;
-  gap: 20px;
+  gap: 40px;
 `;

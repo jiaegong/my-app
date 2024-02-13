@@ -1,13 +1,17 @@
 import styled from '@emotion/styled';
-import React from 'react';
 import Header from './components/organisms/Header';
-import IntroSection from './components/organisms/IntroSection';
+import AboutSection from './components/organisms/AboutSection';
+import { theme } from './styles/theme';
+import PortfolioSection from './components/organisms/PortfolioSection';
+import ContactSection from './components/organisms/ContactSection';
 
 function App() {
   return (
     <PageLayout>
       <Header />
-      {/* <IntroSection /> */}
+      <AboutSection />
+      <PortfolioSection />
+      <ContactSection />
     </PageLayout>
   );
 }
@@ -17,5 +21,5 @@ export default App;
 const PageLayout = styled.div`
   max-width: 100vw;
   min-height: 100vh;
-  background: #faf0e6;
+  background: ${theme.colors.beige};
 `;

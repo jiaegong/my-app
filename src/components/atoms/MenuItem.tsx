@@ -6,6 +6,7 @@ function MenuItem({ item }: { item: { name: string } }) {
 
   return (
     <div
+      style={{ cursor: 'pointer' }}
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
     >

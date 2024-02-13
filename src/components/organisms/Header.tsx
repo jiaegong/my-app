@@ -1,10 +1,14 @@
 import styled from '@emotion/styled';
-import React from 'react';
 import Navigator from '../molecules/Navigator';
+import { motion } from 'framer-motion';
+import useScrollUp from '../../hooks/useScrollUp';
 
 function Header() {
+  const { isScrollUp, scrollY } = useScrollUp();
+  const show = scrollY < 60 || isScrollUp;
+
   return (
-    <HeaderLayout>
+    <HeaderLayout animate={{ opacity: show ? 1 : 0 }}>
       <Logo>Jiae Gong</Logo>
       <Navigator />
     </HeaderLayout>
@@ -13,7 +17,7 @@ function Header() {
 
 export default Header;
 
-const HeaderLayout = styled.div`
+const HeaderLayout = styled(motion.header)`
   width: 100%;
   height: 60px;
 

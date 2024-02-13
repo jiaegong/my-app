@@ -1,7 +1,8 @@
 import React from 'react';
+import Title from '../atoms/Title';
 
 function ContactSection() {
-  return <div>ContactSection</div>;
+  return <Title>Contact</Title>;
 }
 
 export default ContactSection;
