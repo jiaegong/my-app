@@ -1,9 +1,14 @@
-import styled from '@emotion/styled';
-import { theme } from '../../styles/theme';
-import { AnimatePresence, motion } from 'framer-motion';
-import { Canvas } from '@react-three/fiber';
-import Character from './Character';
-import { ContactShadows, Environment } from '@react-three/drei';
+import styled from "@emotion/styled";
+import { theme } from "../../styles/theme";
+import { AnimatePresence, motion } from "framer-motion";
+import { Canvas } from "@react-three/fiber";
+import Character from "./Character";
+import {
+  ContactShadows,
+  Environment,
+  OrbitControls,
+  PerspectiveCamera,
+} from "@react-three/drei";
 
 function ProfileBox({ progress }: { progress: number }) {
   return (
@@ -19,14 +24,16 @@ function ProfileBox({ progress }: { progress: number }) {
           gl={{ antialias: true }}
           dpr={[1, 2]}
         >
-          <Environment preset='warehouse' />
-          <ambientLight intensity={1} />
+          <Environment preset="sunset" />
+          <ambientLight intensity={5} />
           <ContactShadows
-            position={[0, -1, 0]}
+            position={[0, -1.5, 0]}
             opacity={0.8}
             blur={2.5}
             far={1.6}
           />
+          <PerspectiveCamera />
+          <OrbitControls />
           <Character />
         </Canvas>
       </Layout>
