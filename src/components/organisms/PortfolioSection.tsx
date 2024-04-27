@@ -2,15 +2,37 @@ import styled from '@emotion/styled';
 import Title from '../atoms/Title';
 import ProjectCard from '../molecules/ProjectCard';
 import Spacing from '../atoms/Spacing';
+import { theme } from '../../styles/theme';
 
-export type ProjectType = { title: string; date: string; description: string };
+export type ProjectType = {
+  title: string;
+  description: string;
+  link?: string;
+  background: string;
+};
 
 const projects: ProjectType[] = [
-  { title: 'title', date: 'date', description: 'description' },
-  { title: 'title', date: 'date', description: 'description' },
-  { title: 'title', date: 'date', description: 'description' },
-  { title: 'title', date: 'date', description: 'description' },
-  { title: 'title', date: 'date', description: 'description' },
+  {
+    title: 'Altava',
+    description: 'description',
+    link: 'https://altava.com/',
+    background: theme.colors.yellow,
+  },
+  {
+    title: 'Valla Lab',
+    description: 'description',
+    background: theme.colors.apricot,
+  },
+  {
+    title: 'Windows95',
+    description: 'description',
+    background: theme.colors.mint,
+  },
+  {
+    title: 'Friengls',
+    description: 'description',
+    background: theme.colors.skyblue,
+  },
 ];
 
 function PortfolioSection() {
@@ -37,7 +59,7 @@ const SectionLayout = styled.section`
 `;
 
 const PortfolioContainer = styled.div`
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
 `;

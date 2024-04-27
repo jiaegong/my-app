@@ -21,5 +21,4 @@ export default App;
 const PageLayout = styled.div`
   max-width: 100vw;
   min-height: 100vh;
-  background: ${theme.colors.beige};
 `;

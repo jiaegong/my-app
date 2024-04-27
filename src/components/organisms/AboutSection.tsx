@@ -3,7 +3,7 @@ import DividedText from '../atoms/DividedText';
 import { useLayoutEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import ProfileBox from '../molecules/ProfileBox';
+import ProfileContainer from '../molecules/ProfileContainer';
 
 function AboutSection() {
   const ref = useRef<HTMLDivElement>(null);
@@ -35,7 +35,7 @@ function AboutSection() {
   return (
     <SectionLayout ref={ref}>
       <DividedText progress={progress} />
-      <ProfileBox progress={progress} />
+      <ProfileContainer progress={progress} />
     </SectionLayout>
   );
 }

@@ -1,9 +1,11 @@
 export const theme = {
   colors: {
-    beige: '#faf0e6',
-    pink: '#ffc0cb',
-    apricot: '#fec3b5',
-    white: '#fff',
     black: '#000',
+    white: '#fff',
+    mint: '#cff2ed',
+    pink: '#f2cfd4',
+    skyblue: '#d4edf6',
+    apricot: '#f6ddd4',
+    yellow: '#f6eed4',
   },
 };

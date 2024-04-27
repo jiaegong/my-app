@@ -30,7 +30,7 @@ const HeaderLayout = styled(motion.header)`
 
   padding: 0 40px;
 
-  font-family: 'Inter';
+  font-family: 'Urbanist';
 `;
 
 const Logo = styled.div`

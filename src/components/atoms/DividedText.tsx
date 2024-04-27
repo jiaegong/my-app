@@ -1,11 +1,8 @@
 import styled from '@emotion/styled';
-import { motion } from 'framer-motion';
 import Spacing from './Spacing';
-import { theme } from '../../styles/theme';
 import Title from './Title';
 
 function DividedText({ progress }: { progress: number }) {
-  console.log(progress);
   return (
     <TextLayout>
       <Title
@@ -20,7 +17,7 @@ function DividedText({ progress }: { progress: number }) {
         }}
         transition={{ duration: 0.1 }}
       >
-        Hello I am
+        Jiae
       </Title>
       <Spacing size='20px' direction='horizontal' />
       <Title
@@ -35,7 +32,7 @@ function DividedText({ progress }: { progress: number }) {
         }}
         transition={{ duration: 0.1 }}
       >
-        Jiae Gong
+        Gong
       </Title>
     </TextLayout>
   );

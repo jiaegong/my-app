@@ -1,5 +1,4 @@
 import styled from '@emotion/styled';
-import { theme } from '../../styles/theme';
 import { motion } from 'framer-motion';
 
 function Title({
@@ -23,9 +22,6 @@ function Title({
 export default Title;
 
 const Wrapper = styled(motion.div)`
-  font-family: 'Chubby';
-  font-size: 60px;
-  color: ${theme.colors.pink};
-  -webkit-text-stroke: 2px ${theme.colors.black};
-  text-stroke: 2px ${theme.colors.black};
+  font-family: 'BungeeShade';
+  font-size: 112px;
 `;
