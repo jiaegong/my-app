@@ -8,7 +8,8 @@ import React from 'react';
 export type ProjectType = {
   title: string;
   description: React.ReactNode;
-  thumbnail?: string;
+  thumbnail: string;
+  stack: string[];
   link?: string;
   github?: string;
   background: string;
@@ -31,6 +32,15 @@ const projects: ProjectType[] = [
         최적화를 하는 등 유저의 편의성을 많이 생각하며 개발했습니다.
       </p>
     ),
+    stack: [
+      'Nextjs',
+      'Typescript',
+      'Tailwind css',
+      'gsap',
+      'framer-motion',
+      'React-query',
+      'zustand',
+    ],
     thumbnail: '/images/altava.png',
     link: 'https://altava.com/',
     background: theme.colors.yellow,
@@ -51,6 +61,14 @@ const projects: ProjectType[] = [
         있었습니다.
       </p>
     ),
+    stack: [
+      'Nextjs',
+      'Typescript',
+      'Emotion',
+      'React-query',
+      'Recoil',
+      'react-hook-form',
+    ],
     thumbnail: '/images/valla.png',
     link: 'https://partner-entry.valla.kr/shop/terms',
     background: theme.colors.apricot,
@@ -67,8 +85,9 @@ const projects: ProjectType[] = [
         추가해 개선해나가고 있습니다.
       </p>
     ),
+    stack: ['Nextjs', 'Typescript', 'Emotion', 'zustand'],
     thumbnail: '/images/windows.png',
-    link: 'https://partner-entry.valla.kr/shop/terms',
+    link: 'https://windows95-kohl.vercel.app/',
     github: 'https://github.com/jiaegong/windows95',
     background: theme.colors.mint,
   },
@@ -82,11 +101,22 @@ const projects: ProjectType[] = [
         튜터 입장에서도 스케줄을 캘린더로 바로 확인할 수 있는 프로젝트를 만들어
         보았습니다.
         <br />
-        스케줄 확인 후 웹사이트 내에서 바로 수업을 진행할 수 있도록 WebRTC를
-        이용한 화상통화 기능과 화면 공유 기능이 있으며 수업을 들으면서 모르는
-        단어는 검색할 수 있도록 번역기도 추가했습니다.
+        스케줄 확인 후 웹사이트 내에서 바로 수업을 진행할 수 있도록 Socket.io와
+        WebRTC를 이용한 화상통화 기능과 화면 공유 기능이 있으며 수업을 들으면서
+        모르는 단어는 검색할 수 있도록 번역기도 추가했습니다. 프로젝트 성격에
+        맞게 다국어 지원(한국어, 영어, 일본어)을 하고 있습니다.
       </p>
     ),
+    stack: [
+      'React',
+      'Javascript',
+      'styled-component',
+      'redux',
+      'PeerJS',
+      'Socket.io',
+      'i18next',
+    ],
+    thumbnail: '/images/friengls.png',
     github: 'https://github.com/jiaegong/Friengls',
     background: theme.colors.skyblue,
   },

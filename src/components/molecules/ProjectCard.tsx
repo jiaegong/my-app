@@ -1,16 +1,40 @@
 import styled from '@emotion/styled';
 import { ProjectType } from '../organisms/PortfolioSection';
 import Badge from '../atoms/Badge';
+import GithubIcon from '../atoms/icons/GithubIcon';
+import LinkIcon from '../atoms/icons/LinkIcon';
+import { motion, useInView } from 'framer-motion';
+import { useRef } from 'react';
 
 function ProjectCard({ data, index }: { data: ProjectType; index: number }) {
+  const titleRef = useRef<HTMLDivElement>(null);
+  const titleInView = useInView(titleRef);
+
   return (
     <CardLayout background={data.background} index={index}>
       <ContentBox>
-        <TextContainer>
-          <TitleWrapper>{data.title}</TitleWrapper>
+        <InfoContainer>
+          <div style={{ overflow: 'hidden' }} ref={titleRef}>
+            <TitleWrapper
+              initial={{ x: -100, y: 50 }}
+              animate={{
+                x: titleInView ? 0 : -100,
+                y: titleInView ? 0 : 50,
+              }}
+              transition={{ duration: 0.4 }}
+            >
+              {data.title}
+            </TitleWrapper>
+          </div>
           <DescriptionWrapper>{data.description}</DescriptionWrapper>
-        </TextContainer>
-        <LinkContainer>
+          <BadgeContainer>
+            Stack:
+            {data.stack.map((stack) => (
+              <Badge>{stack}</Badge>
+            ))}
+          </BadgeContainer>
+        </InfoContainer>
+        <BadgeContainer>
           {data.link && (
             <a
               href={data.link}
@@ -18,7 +42,9 @@ function ProjectCard({ data, index }: { data: ProjectType; index: number }) {
               rel='noreferrer'
               style={{ textDecoration: 'none' }}
             >
-              <Badge>VIEW WEBSITE</Badge>
+              <Badge link icon={<LinkIcon />}>
+                VIEW WEBSITE
+              </Badge>
             </a>
           )}
           {data.github && (
@@ -28,10 +54,12 @@ function ProjectCard({ data, index }: { data: ProjectType; index: number }) {
               rel='noreferrer'
               style={{ textDecoration: 'none' }}
             >
-              <Badge>GITHUB</Badge>
+              <Badge link icon={<GithubIcon />}>
+                GITHUB
+              </Badge>
             </a>
           )}
-        </LinkContainer>
+        </BadgeContainer>
       </ContentBox>
       {data.thumbnail && (
         <ImageWrapper>
@@ -60,18 +88,18 @@ const ContentBox = styled.div`
   padding: 50px;
 `;
 
-const TextContainer = styled.div`
+const InfoContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 20px;
 `;
 
-const TitleWrapper = styled.h2`
+const TitleWrapper = styled(motion.h2)`
   font-family: 'BungeeShade';
   font-size: 3rem;
 `;
 
-const DescriptionWrapper = styled.h3`
+const DescriptionWrapper = styled(motion.h3)`
   font-family: 'Pretendard';
   font-size: 1rem;
   line-height: 150%;
@@ -85,12 +113,16 @@ const ImageWrapper = styled.div`
 
 const Image = styled.img`
   max-width: 100%;
-  height: 100%;
   object-fit: cover;
   object-position: left top;
 `;
 
-const LinkContainer = styled.div`
+const BadgeContainer = styled(motion.div)`
   display: flex;
+  align-items: center;
+  flex-wrap: wrap;
   gap: 6px;
+
+  font-family: 'Pretendard';
+  font-weight: 700;
 `;

@@ -11,7 +11,7 @@ const stackList = [
   'Tailwind css',
   'gsap',
   'framer-motion',
-  'react-query',
+  'React-query',
   'zustand',
   'recoil',
 ];
