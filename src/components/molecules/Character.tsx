@@ -1,7 +1,7 @@
-import { Float, useFBX } from "@react-three/drei";
+import { Float, useFBX } from '@react-three/drei';
 
 function Character() {
-  const fbx = useFBX("/tokki.fbx");
+  const fbx = useFBX('/3d/tokki.fbx');
 
   return (
     <Float
