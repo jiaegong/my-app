@@ -6,9 +6,14 @@ function ContactSection() {
   return (
     <SectionLayout>
       <Title>Contact</Title>
-      <Wrapper>
-        <CharacterContainer />
-      </Wrapper>
+      <ContentBox>
+        <ContactInfoContainer>
+          Email: jiae.gong93@gmail.com
+        </ContactInfoContainer>
+        <CharacterWrapper>
+          <CharacterContainer />
+        </CharacterWrapper>
+      </ContentBox>
     </SectionLayout>
   );
 }
@@ -20,9 +25,21 @@ const SectionLayout = styled.section`
   flex-direction: column;
   padding: 120px;
   max-width: 1600px;
+  margin: 0 auto;
 `;
 
-const Wrapper = styled.div`
+const ContentBox = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const CharacterWrapper = styled.div`
   width: 600px;
   height: 400px;
+`;
+
+const ContactInfoContainer = styled.div`
+  font-family: 'Urbanist';
+  font-size: 36px;
 `;

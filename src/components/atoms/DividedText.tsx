@@ -9,7 +9,7 @@ function DividedText({ progress }: { progress: number }) {
         initial={{ y: 0 }}
         animate={{
           x: `${
-            progress > 0.1 ? -25 * Math.min(Math.sqrt(progress) + 0.3, 1) : 0
+            progress > 0.1 ? -23 * Math.min(Math.sqrt(progress) + 0.3, 1) : 0
           }vw`,
           y: `${
             progress > 0.2 ? -40 * Math.min(Math.sqrt(progress) + 0.4, 1) : 0
@@ -24,7 +24,7 @@ function DividedText({ progress }: { progress: number }) {
         initial={{ y: 0 }}
         animate={{
           x: `${
-            progress > 0.1 ? +25 * Math.min(Math.sqrt(progress) + 0.3, 1) : 0
+            progress > 0.1 ? +23 * Math.min(Math.sqrt(progress) + 0.3, 1) : 0
           }vw`,
           y: `${
             progress > 0.2 ? +40 * Math.min(Math.sqrt(progress) + 0.4, 1) : 0

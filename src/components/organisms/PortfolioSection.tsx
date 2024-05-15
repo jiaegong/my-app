@@ -141,8 +141,10 @@ export default PortfolioSection;
 const SectionLayout = styled.section`
   display: flex;
   flex-direction: column;
+  justify-content: center;
   padding: 120px;
   max-width: 1600px;
+  margin: 0 auto;
 `;
 
 const PortfolioContainer = styled.div`
