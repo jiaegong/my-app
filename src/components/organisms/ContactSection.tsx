@@ -8,7 +8,7 @@ function ContactSection() {
       <Title>Contact</Title>
       <ContentBox>
         <ContactInfoContainer>
-          Email: jiae.gong93@gmail.com
+          Email: jiaetiagong@gmail.com
         </ContactInfoContainer>
         <CharacterWrapper>
           <CharacterContainer />

@@ -2,11 +2,18 @@ import React, { useState } from 'react';
 import ConveyorText from './ConveyorText';
 import styled from '@emotion/styled';
 
-function MenuItem({ item }: { item: { name: string } }) {
+function MenuItem({
+  item,
+  onClick,
+}: {
+  item: { name: string };
+  onClick: () => void;
+}) {
   const [hover, setHover] = useState<boolean>(false);
 
   return (
     <ItemWrapper
+      onClick={onClick}
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
     >

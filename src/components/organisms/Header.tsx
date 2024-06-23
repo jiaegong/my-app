@@ -3,14 +3,18 @@ import Navigator from '../molecules/Navigator';
 import { motion } from 'framer-motion';
 import useScrollUp from '../../hooks/useScrollUp';
 
-function Header() {
+function Header({
+  scrollToSection,
+}: {
+  scrollToSection: (idx: number) => void;
+}) {
   const { isScrollUp, scrollY } = useScrollUp();
   const show = scrollY < 60 || isScrollUp;
 
   return (
     <HeaderLayout animate={{ opacity: show ? 1 : 0 }}>
       <Logo>Jiae Gong</Logo>
-      <Navigator />
+      <Navigator scrollToSection={scrollToSection} />
     </HeaderLayout>
   );
 }
